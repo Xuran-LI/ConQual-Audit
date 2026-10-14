@@ -89,7 +89,6 @@ benchmarks/                   test sets, what each evaluator is shown, and each 
 baselines/                    BLEU-4 / ROUGE-L, BERTScore / MoverScore, GEMBA, FActScore, ExPerT, PREF, PerSE
 experiments/
   run_conqual.py              ConQual-Audit on a benchmark
-  ablation.py                 ConQual without qualification (the constructed constraints, verified directly)
   audit_baselines.py          ExPerT / PREF constraints audited by ConQual, then re-scored by each method
 tables/                       the paper's tables from the saved results (no GPU needed)
 utils/                        judge model and JSON parsing (llm.py), batched runs with checkpoints (runner.py)
