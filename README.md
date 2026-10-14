@@ -39,6 +39,9 @@ ConQual-Audit requires three roles: the generator **G**, the verifier **V** and 
 3. **Constraint Verification.** Evaluate the response with audited constraints
 
 Measurement Result: constraint coverage, response attribution, and their harmonic mean. 
+<p align="center">
+  <img src="assets/assets/metrics.png" width="300" alt="Metrics">
+</p>
 
 ## Case study example
 
@@ -71,28 +74,7 @@ The task reference if for non-physical alternatives such as **problem-solving ex
 
 ## Results
 
-Evaluators judge controlled positive responses (they should be accepted) and negative responses (they should be
-rejected). We report the AUC, the false rejection rate (FRR), the false acceptance rate (FAR) and the false rate
-FR = (FRR + FAR) / 2, at τ = 0.5.
-
-| Method | LaMP AUC ↑ | LaMP FR ↓ | PrefEval AUC ↑ | PrefEval FR ↓ |
-|---|:---:|:---:|:---:|:---:|
-| BLEU-4 | 0.79 | 0.39 | – | – |
-| ROUGE-L | 0.70 | 0.34 | – | – |
-| BERTScore | 0.74 | 0.50 | – | – |
-| MoverScore | 0.76 | 0.44 | – | – |
-| GEMBA | 0.67 | 0.36 | 0.82 | 0.44 |
-| PerSE | 0.66 | 0.41 | 0.81 | 0.29 |
-| FActScore | 0.48 | 0.53 | 0.52 | 0.49 |
-| ExPerT | 0.54 | 0.46 | 0.53 | 0.50 |
-| PREF | 0.84 | 0.25 | 0.79 | 0.51 |
-| **ConQual-Audit** | **0.90** | **0.21** | **0.88** | **0.21** |
-
-LaMP is the average over LaMP-1, LaMP-2 and LaMP-4. The reference-based metrics need a gold answer, so they are
-reported on LaMP only.
-
-**The audit is portable.** Applied to other evaluators' constraints, it lowers their false rate: ExPerT goes from
-0.50 to 0.49, and PREF from 0.51 to 0.46. PREF's false acceptance rate drops from 1.00 to 0.89.
+Evaluators judge controlled positive responses (same meaning with *Golden Labels*) and negative responses (different meanings with *Golden Labels*). Across PrefEval and LaMP, ConQual-Audit outperforms nine baselines, attaining top AUCs (0.88 and 0.90) and the lowest false rate (0.21) on the leanest constraint sets at an amortizable audit cost. Crucially, this constraint audit is portable: integrating it into ExPerT and PREF helps revise smaller, higher-quality constraint sets to reduce their evaluation false rates.
 
 ---
 
