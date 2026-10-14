@@ -1,0 +1,11 @@
+# versions of the paper's runs
+torch==2.5.1
+transformers==5.16.1
+accelerate
+numpy
+pandas
+nltk==3.9.4
+rouge-score==0.1.2
+bert-score==0.3.13
+pyemd==1.1.0
+datasets            # only for benchmarks/build_prefeval.py
